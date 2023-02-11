@@ -8,8 +8,8 @@ use test2 as _; // global logger + panicking-behavior + memory layout
 fn main() -> ! {
     defmt::println!("running");
 
-    let res = test2::extract::test_function();
-    assert_eq!(res, (1, 99, [3, 99]));
+    let res = test2::extract::test_function(true);
+    assert_eq!(res, (99, [3, 99]));
 
     defmt::info!("it worked!");
 
